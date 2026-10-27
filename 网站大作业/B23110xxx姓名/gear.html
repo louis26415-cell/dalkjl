@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="露营装备挑选指南与在线清单">
+  <title>装备挑选 - 野趣营地</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- 顶部固定导航栏 -->
+  <header class="header">
+    <div class="container clearfix">
+      <a class="logo" href="index.html">⛺ 野趣<span>营地</span></a>
+      <span class="menu-toggle">☰</span>
+      <ul class="nav">
+        <li><a href="index.html">露营首页</a></li>
+        <li><a href="camps.html">营地推荐</a></li>
+        <li><a href="gear.html" class="active">装备挑选</a></li>
+        <li><a href="guide.html">露营攻略</a></li>
+        <li class="btn-join"><a href="signup.html">报名同行</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- 页面横幅 -->
+  <section class="page-banner" style="background-image:url(images/banner1.jpg)">
+    <div class="text">
+      <h1>装备挑选</h1>
+      <p>选对装备，露营就成功了一半</p>
+    </div>
+  </section>
+  <div class="container breadcrumb">
+    当前位置：<a href="index.html">首页</a> &gt; 装备挑选
+    <a class="btn btn-outline" style="float:right;padding:2px 14px;font-size:13px" href="index.html">← 返回首页</a>
+  </div>
+
+  <section class="section" style="padding-top:20px">
+    <div class="container">
+      <div class="section-title"><h2>四大核心装备</h2><p>帐篷、睡眠、炊事、照明 —— 露营装备的四大件</p></div>
+      <div class="gear-grid clearfix">
+        <div class="g card"><img src="images/gear1.jpg" alt="帐篷"><div class="body"><h3>帐篷</h3>
+          <ul><li>人数：实际人数 +1 更宽敞</li><li>防水指数 ≥ 2000mm</li><li>双层帐防结露</li></ul></div></div>
+        <div class="g card"><img src="images/gear2.jpg" alt="睡袋"><div class="body"><h3>睡袋</h3>
+          <ul><li>看舒适温标而非极限温标</li><li>羽绒轻便，棉睡袋耐潮</li><li>搭配防潮垫使用</li></ul></div></div>
+        <div class="g card"><img src="images/gear3.jpg" alt="炉具"><div class="body"><h3>炉具</h3>
+          <ul><li>卡式炉适合自驾露营</li><li>分体炉适合徒步背负</li><li>高海拔选高山气罐</li></ul></div></div>
+        <div class="g card"><img src="images/gear4.jpg" alt="灯具"><div class="body"><h3>灯具</h3>
+          <ul><li>头灯解放双手</li><li>营地灯选暖光更氛围</li><li>备好电池或充电宝</li></ul></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:#fff">
+    <div class="container clearfix">
+      <div class="section-title"><h2>我的装备清单</h2><p>勾选你准备携带的装备，系统自动统计数量与总负重（数据保存在本地浏览器）</p></div>
+      <form class="checklist card" onsubmit="return false">
+        <fieldset>
+          <legend>必备装备</legend>
+          <label><input type="checkbox" value="帐篷" data-weight="2500" data-must="1"> 帐篷 <em>(2500g)</em></label>
+          <label><input type="checkbox" value="睡袋" data-weight="1500" data-must="1"> 睡袋 <em>(1500g)</em></label>
+          <label><input type="checkbox" value="防潮垫" data-weight="600" data-must="1"> 防潮垫 <em>(600g)</em></label>
+          <label><input type="checkbox" value="头灯" data-weight="100" data-must="1"> 头灯 <em>(100g)</em></label>
+          <label><input type="checkbox" value="急救包" data-weight="300" data-must="1"> 急救包 <em>(300g)</em></label>
+          <label><input type="checkbox" value="饮用水 2L" data-weight="2000" data-must="1"> 饮用水 2L <em>(2000g)</em></label>
+        </fieldset>
+        <fieldset>
+          <legend>舒适装备</legend>
+          <label><input type="checkbox" value="充气枕头" data-weight="150" data-must="0"> 充气枕头 <em>(150g)</em></label>
+          <label><input type="checkbox" value="折叠椅" data-weight="1200" data-must="0"> 折叠椅 <em>(1200g)</em></label>
+          <label><input type="checkbox" value="营地灯" data-weight="400" data-must="0"> 营地灯 <em>(400g)</em></label>
+          <label><input type="checkbox" value="天幕" data-weight="1800" data-must="0"> 天幕 <em>(1800g)</em></label>
+        </fieldset>
+        <fieldset>
+          <legend>炊事装备</legend>
+          <label><input type="checkbox" value="卡式炉" data-weight="1300" data-must="0"> 卡式炉 <em>(1300g)</em></label>
+          <label><input type="checkbox" value="套锅" data-weight="700" data-must="0"> 套锅 <em>(700g)</em></label>
+          <label><input type="checkbox" value="气罐" data-weight="350" data-must="0"> 气罐 <em>(350g)</em></label>
+          <label><input type="checkbox" value="保温杯" data-weight="300" data-must="0"> 保温杯 <em>(300g)</em></label>
+        </fieldset>
+        <fieldset>
+          <legend>进阶装备</legend>
+          <label><input type="checkbox" value="净水器" data-weight="200" data-must="0"> 净水器 <em>(200g)</em></label>
+          <label><input type="checkbox" value="登山杖" data-weight="500" data-must="0"> 登山杖 <em>(500g)</em></label>
+          <label><input type="checkbox" value="充电宝" data-weight="300" data-must="0"> 充电宝 <em>(300g)</em></label>
+          <label><input type="checkbox" value="户外电源" data-weight="6000" data-must="0"> 户外电源 <em>(6000g)</em></label>
+        </fieldset>
+      </form>
+      <aside class="summary card">
+        <h3>清单统计</h3>
+        <p>已选装备：<b id="gearCount">0</b></p>
+        <div class="progress"><div id="gearBar"></div></div>
+        <p>预计总负重：</p>
+        <p><span class="num" id="gearWeight">0.0</span> kg</p>
+        <p class="level" id="gearLevel"></p>
+        <button class="btn" id="gearBasic" type="button">一键选择必备</button>
+        <button class="btn btn-outline" id="gearReset" type="button">清空</button>
+      </aside>
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+  <footer class="footer">
+    <div class="container clearfix">
+      <div class="col">
+        <h4>⛺ 野趣营地</h4>
+        <p>分享真实的露营体验，让每一次出发都更从容。</p>
+      </div>
+      <div class="col">
+        <h4>网站导航</h4>
+        <ul>
+          <li><a href="index.html">露营首页</a></li>
+          <li><a href="camps.html">营地推荐</a></li>
+          <li><a href="gear.html">装备挑选</a></li>
+          <li><a href="guide.html">露营攻略</a></li>
+        </ul>
+      </div>
+      <div class="col">
+        <h4>联系我们</h4>
+        <ul>
+          <li>邮箱：hello@yequ-camp.cn</li>
+          <li>电话：025-8888 6666</li>
+          <li>地址：江苏省南京市（虚拟）</li>
+        </ul>
+      </div>
+      <div class="col">
+        <h4>无痕露营倡议</h4>
+        <p>带走垃圾，留下脚印；尊重自然，守护山野。</p>
+        <p><a class="btn" href="signup.html">加入我们</a></p>
+      </div>
+      <p class="copy">© 2026 野趣营地 · 《网站原理与设计》课程大作业 · 图文素材均为原创示意</p>
+    </div>
+  </footer>
+  <button class="back-top" title="回到顶部">↑</button>
+  <script src="js/main.js"></script>
+</body>
+</html>
