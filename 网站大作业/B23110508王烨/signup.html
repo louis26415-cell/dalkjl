@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="露营爱好者在线报名">
+  <title>报名同行 - 野趣营地</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- 顶部固定导航栏 -->
+  <header class="header">
+    <div class="container clearfix">
+      <a class="logo" href="index.html">⛺ 野趣<span>营地</span></a>
+      <span class="menu-toggle">☰</span>
+      <ul class="nav">
+        <li><a href="index.html">露营首页</a></li>
+        <li><a href="camps.html">营地推荐</a></li>
+        <li><a href="gear.html">装备挑选</a></li>
+        <li><a href="guide.html">露营攻略</a></li>
+        <li class="btn-join"><a href="signup.html" class="active">报名同行</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- 页面横幅 -->
+  <section class="page-banner" style="background-image:url(images/banner3.jpg)">
+    <div class="text">
+      <h1>报名同行</h1>
+      <p>找到志同道合的露营伙伴，一起出发</p>
+    </div>
+  </section>
+  <div class="container breadcrumb">
+    当前位置：<a href="index.html">首页</a> &gt; 报名同行
+    <a class="btn btn-outline" style="float:right;padding:2px 14px;font-size:13px" href="index.html">← 返回首页</a>
+  </div>
+
+  <section class="section" style="padding-top:20px">
+    <div class="container clearfix">
+      <form class="form-wrap card" id="signupForm" novalidate>
+        <h2 style="color:var(--green-dark);margin-bottom:18px">露营爱好者报名表</h2>
+        <div class="form-row clearfix">
+          <div class="half"><label class="t" for="name">姓名 <b>*</b></label><input type="text" id="name" name="name" placeholder="请输入真实姓名"><span class="err"></span></div>
+          <div class="half"><label class="t" for="phone">手机号 <b>*</b></label><input type="tel" id="phone" name="phone" maxlength="11" placeholder="11 位手机号"><span class="err"></span></div>
+        </div>
+        <div class="form-row">
+          <label class="t" for="email">电子邮箱 <b>*</b></label>
+          <input type="email" id="email" name="email" placeholder="example@mail.com">
+          <span class="err"></span>
+        </div>
+        <div class="form-row">
+          <label class="t">性别</label>
+          <label class="opt"><input type="radio" name="gender" value="男" checked> 男</label>
+          <label class="opt"><input type="radio" name="gender" value="女"> 女</label>
+        </div>
+        <div class="form-row">
+          <label class="t" for="camp">意向营地 <b>*</b></label>
+          <select id="camp" name="camp">
+            <option value="">-- 请选择营地 --</option>
+              <option value="1">溪月湖营地（浙江 · 湖州安吉）</option>
+              <option value="2">星空草原营地（内蒙古 · 乌兰布统）</option>
+              <option value="3">雪山草甸营地（四川 · 甘孜新都桥）</option>
+              <option value="4">鸣沙落日营地（甘肃 · 敦煌鸣沙山）</option>
+              <option value="5">松涛森林营地（江苏 · 南京老山）</option>
+              <option value="6">听海沙滩营地（福建 · 平潭岛）</option>
+          </select>
+          <span class="err"></span>
+        </div>
+        <div class="form-row clearfix">
+          <div class="half"><label class="t" for="date">出发日期 <b>*</b></label><input type="date" id="date" name="date"><span class="err"></span></div>
+          <div class="half"><label class="t" for="people">同行人数 <b>*</b></label><input type="number" id="people" name="people" min="1" max="10" value="2"><span class="err"></span></div>
+        </div>
+        <div class="form-row">
+          <label class="t">露营经验</label>
+          <label class="opt"><input type="radio" name="level" value="零基础" checked> 零基础</label>
+          <label class="opt"><input type="radio" name="level" value="去过 1~3 次"> 去过 1~3 次</label>
+          <label class="opt"><input type="radio" name="level" value="资深玩家"> 资深玩家</label>
+        </div>
+        <div class="form-row">
+          <label class="t">感兴趣的活动（可多选）</label>
+          <label class="opt"><input type="checkbox" name="like" value="观星"> 观星</label>
+          <label class="opt"><input type="checkbox" name="like" value="徒步"> 徒步</label>
+          <label class="opt"><input type="checkbox" name="like" value="摄影"> 摄影</label>
+          <label class="opt"><input type="checkbox" name="like" value="野炊"> 野炊</label>
+          <label class="opt"><input type="checkbox" name="like" value="垂钓"> 垂钓</label>
+        </div>
+        <div class="form-row">
+          <label class="t" for="message">给领队的留言 <span class="count"><span id="msgCount">0</span>/200</span></label>
+          <textarea id="message" name="message" rows="4" maxlength="200" placeholder="例如：是否需要租赁装备、饮食禁忌等"></textarea>
+        </div>
+        <div class="form-row">
+          <label class="opt"><input type="checkbox" name="agree" id="agree"> 我已阅读并同意 <a href="guide.html#safe">《露营安全须知》</a></label>
+          <span class="err"></span>
+        </div>
+        <button class="btn" type="submit">提交报名</button>
+        <button class="btn btn-outline" type="reset">重新填写</button>
+      </form>
+      <aside class="form-side">
+        <div class="side-box card">
+          <h3>报名须知</h3>
+          <ul class="rank">
+            <li>· 报名成功后 24 小时内领队会电话联系</li>
+            <li>· 未满 18 岁需由监护人陪同</li>
+            <li>· 出发前 48 小时可免费取消</li>
+            <li>· 恶劣天气活动将顺延或全额退款</li>
+          </ul>
+        </div>
+        <div class="side-box card">
+          <img src="images/banner2.jpg" alt="营火" style="border-radius:8px;margin-bottom:10px">
+          <p>每月一期“营火夜话”，与资深玩家面对面交流露营心得。</p>
+          <p><a href="index.html">← 返回首页</a></p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- 报名成功弹窗（固定定位遮罩 + 绝对定位居中） -->
+  <div class="mask">
+    <div class="modal">
+      <h3>🎉 报名成功！</h3>
+      <p>请核对以下报名信息：</p>
+      <ul id="result"></ul>
+      <button class="btn" id="closeModal" type="button">好的</button>
+    </div>
+  </div>
+
+  <!-- 页脚 -->
+  <footer class="footer">
+    <div class="container clearfix">
+      <div class="col">
+        <h4>⛺ 野趣营地</h4>
+        <p>分享真实的露营体验，让每一次出发都更从容。</p>
+      </div>
+      <div class="col">
+        <h4>网站导航</h4>
+        <ul>
+          <li><a href="index.html">露营首页</a></li>
+          <li><a href="camps.html">营地推荐</a></li>
+          <li><a href="gear.html">装备挑选</a></li>
+          <li><a href="guide.html">露营攻略</a></li>
+        </ul>
+      </div>
+      <div class="col">
+        <h4>联系我们</h4>
+        <ul>
+          <li>邮箱：hello@yequ-camp.cn</li>
+          <li>电话：025-8888 6666</li>
+          <li>地址：江苏省南京市（虚拟）</li>
+        </ul>
+      </div>
+      <div class="col">
+        <h4>无痕露营倡议</h4>
+        <p>带走垃圾，留下脚印；尊重自然，守护山野。</p>
+        <p><a class="btn" href="signup.html">加入我们</a></p>
+      </div>
+      <p class="copy">© 2026 野趣营地 · 《网站原理与设计》课程大作业 · 图文素材均为原创示意</p>
+    </div>
+  </footer>
+  <button class="back-top" title="回到顶部">↑</button>
+  <script src="js/main.js"></script>
+</body>
+</html>
