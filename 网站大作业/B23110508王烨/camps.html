@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="精选全国特色露营地推荐">
+  <title>营地推荐 - 野趣营地</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- 顶部固定导航栏 -->
+  <header class="header">
+    <div class="container clearfix">
+      <a class="logo" href="index.html">⛺ 野趣<span>营地</span></a>
+      <span class="menu-toggle">☰</span>
+      <ul class="nav">
+        <li><a href="index.html">露营首页</a></li>
+        <li><a href="camps.html" class="active">营地推荐</a></li>
+        <li><a href="gear.html">装备挑选</a></li>
+        <li><a href="guide.html">露营攻略</a></li>
+        <li class="btn-join"><a href="signup.html">报名同行</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- 页面横幅 -->
+  <section class="page-banner" style="background-image:url(images/banner3.jpg)">
+    <div class="text">
+      <h1>营地推荐</h1>
+      <p>精选全国 6 大特色营地，总有一处适合你</p>
+    </div>
+  </section>
+  <div class="container breadcrumb">
+    当前位置：<a href="index.html">首页</a> &gt; 营地推荐
+    <a class="btn btn-outline" style="float:right;padding:2px 14px;font-size:13px" href="index.html">← 返回首页</a>
+  </div>
+
+  <section class="section" style="padding-top:20px">
+    <div class="container">
+      <div class="section-title"><h2>精选营地</h2><p>当前显示 <b id="campCount">6</b> 个营地</p></div>
+      <div class="filter">
+        <button class="btn on" data-type="all">全部</button>
+        <button class="btn" data-type="lake">湖海水边</button>
+        <button class="btn" data-type="mountain">山野徒步</button>
+        <button class="btn" data-type="star">观星胜地</button>
+        <button class="btn" data-type="family">亲子友好</button>
+      </div>
+      <div class="camp-list clearfix">
+        <div class="camp card" data-type="lake family">
+          <div class="pic"><img src="images/camp1.jpg" alt="溪月湖营地"><span class="tag">湖景 · 亲子</span><span class="score">★ 4.9</span></div>
+          <div class="body">
+            <h3>溪月湖营地</h3>
+            <p class="addr">📍 浙江 · 湖州安吉</p>
+            <p>湖畔草坪营位，提供淋浴、电源与皮划艇体验，适合家庭出游。</p>
+            <p><span class="price">¥168</span> / 营位·晚 <a class="btn" style="float:right" href="signup.html">去报名</a></p>
+          </div>
+        </div>
+        <div class="camp card" data-type="star">
+          <div class="pic"><img src="images/camp2.jpg" alt="星空草原营地"><span class="tag">观星 · 营火</span><span class="score">★ 4.8</span></div>
+          <div class="body">
+            <h3>星空草原营地</h3>
+            <p class="addr">📍 内蒙古 · 乌兰布统</p>
+            <p>光污染极低，夏秋季节可清晰看见银河，晚间提供篝火晚会。</p>
+            <p><span class="price">¥128</span> / 营位·晚 <a class="btn" style="float:right" href="signup.html">去报名</a></p>
+          </div>
+        </div>
+        <div class="camp card" data-type="mountain">
+          <div class="pic"><img src="images/camp3.jpg" alt="雪山草甸营地"><span class="tag">高山 · 徒步</span><span class="score">★ 4.7</span></div>
+          <div class="body">
+            <h3>雪山草甸营地</h3>
+            <p class="addr">📍 四川 · 甘孜新都桥</p>
+            <p>海拔 3400 米，正对雪山，适合有经验的徒步露营爱好者。</p>
+            <p><span class="price">¥98</span> / 营位·晚 <a class="btn" style="float:right" href="signup.html">去报名</a></p>
+          </div>
+        </div>
+        <div class="camp card" data-type="star">
+          <div class="pic"><img src="images/camp4.jpg" alt="鸣沙落日营地"><span class="tag">沙漠 · 观星</span><span class="score">★ 4.6</span></div>
+          <div class="body">
+            <h3>鸣沙落日营地</h3>
+            <p class="addr">📍 甘肃 · 敦煌鸣沙山</p>
+            <p>沙丘之上看日落，夜晚星空壮丽，提供骆驼骑行项目。</p>
+            <p><span class="price">¥220</span> / 营位·晚 <a class="btn" style="float:right" href="signup.html">去报名</a></p>
+          </div>
+        </div>
+        <div class="camp card" data-type="family mountain">
+          <div class="pic"><img src="images/camp5.jpg" alt="松涛森林营地"><span class="tag">森林 · 亲子</span><span class="score">★ 4.8</span></div>
+          <div class="body">
+            <h3>松涛森林营地</h3>
+            <p class="addr">📍 江苏 · 南京老山</p>
+            <p>林间木平台营位，自然课堂与萤火虫观察，距市区仅 40 分钟。</p>
+            <p><span class="price">¥88</span> / 营位·晚 <a class="btn" style="float:right" href="signup.html">去报名</a></p>
+          </div>
+        </div>
+        <div class="camp card" data-type="lake family">
+          <div class="pic"><img src="images/camp6.jpg" alt="听海沙滩营地"><span class="tag">海边 · 亲子</span><span class="score">★ 4.5</span></div>
+          <div class="body">
+            <h3>听海沙滩营地</h3>
+            <p class="addr">📍 福建 · 平潭岛</p>
+            <p>面朝大海搭帐篷，退潮后可赶海，附近有海鲜市场。</p>
+            <p><span class="price">¥158</span> / 营位·晚 <a class="btn" style="float:right" href="signup.html">去报名</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:#fff">
+    <div class="container">
+      <table class="data">
+        <caption>营地设施对比一览</caption>
+        <thead>
+          <tr><th>营地名称</th><th>所在地区</th><th>最佳季节</th><th>淋浴</th><th>电源</th><th>可携宠物</th><th>参考价格</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>溪月湖营地</td><td>浙江湖州</td><td>4–11 月</td><td>✔</td><td>✔</td><td>✔</td><td>¥168</td></tr>
+          <tr><td>星空草原营地</td><td>内蒙古</td><td>6–9 月</td><td>✔</td><td>✘</td><td>✔</td><td>¥128</td></tr>
+          <tr><td>雪山草甸营地</td><td>四川甘孜</td><td>5–10 月</td><td>✘</td><td>✘</td><td>✘</td><td>¥98</td></tr>
+          <tr><td>鸣沙落日营地</td><td>甘肃敦煌</td><td>5–10 月</td><td>✔</td><td>✔</td><td>✘</td><td>¥220</td></tr>
+          <tr><td>松涛森林营地</td><td>江苏南京</td><td>全年</td><td>✔</td><td>✔</td><td>✔</td><td>¥88</td></tr>
+          <tr><td>听海沙滩营地</td><td>福建平潭</td><td>4–10 月</td><td>✔</td><td>✔</td><td>✔</td><td>¥158</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+  <footer class="footer">
+    <div class="container clearfix">
+      <div class="col">
+        <h4>⛺ 野趣营地</h4>
+        <p>分享真实的露营体验，让每一次出发都更从容。</p>
+      </div>
+      <div class="col">
+        <h4>网站导航</h4>
+        <ul>
+          <li><a href="index.html">露营首页</a></li>
+          <li><a href="camps.html">营地推荐</a></li>
+          <li><a href="gear.html">装备挑选</a></li>
+          <li><a href="guide.html">露营攻略</a></li>
+        </ul>
+      </div>
+      <div class="col">
+        <h4>联系我们</h4>
+        <ul>
+          <li>邮箱：hello@yequ-camp.cn</li>
+          <li>电话：025-8888 6666</li>
+          <li>地址：江苏省南京市（虚拟）</li>
+        </ul>
+      </div>
+      <div class="col">
+        <h4>无痕露营倡议</h4>
+        <p>带走垃圾，留下脚印；尊重自然，守护山野。</p>
+        <p><a class="btn" href="signup.html">加入我们</a></p>
+      </div>
+      <p class="copy">© 2026 野趣营地 · 《网站原理与设计》课程大作业 · 图文素材均为原创示意</p>
+    </div>
+  </footer>
+  <button class="back-top" title="回到顶部">↑</button>
+  <script src="js/main.js"></script>
+</body>
+</html>

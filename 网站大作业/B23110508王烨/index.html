@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="野趣营地：户外露营资讯分享网站">
+  <title>露营首页 - 野趣营地</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- 顶部固定导航栏 -->
+  <header class="header">
+    <div class="container clearfix">
+      <a class="logo" href="index.html">⛺ 野趣<span>营地</span></a>
+      <span class="menu-toggle">☰</span>
+      <ul class="nav">
+        <li><a href="index.html" class="active">露营首页</a></li>
+        <li><a href="camps.html">营地推荐</a></li>
+        <li><a href="gear.html">装备挑选</a></li>
+        <li><a href="guide.html">露营攻略</a></li>
+        <li class="btn-join"><a href="signup.html">报名同行</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- 图片轮播 -->
+  <section class="slider">
+    <div class="slides clearfix">
+      <div class="slide">
+        <img src="images/banner1.jpg" alt="清晨湖畔露营">
+        <div class="caption"><h2>湖畔清晨</h2><p>在第一缕阳光中醒来，听见山与水的低语</p></div>
+      </div>
+      <div class="slide">
+        <img src="images/banner2.jpg" alt="星空营火">
+        <div class="caption"><h2>星空营火</h2><p>围炉夜话，把银河装进帐篷的天窗</p></div>
+      </div>
+      <div class="slide">
+        <img src="images/banner3.jpg" alt="高山草甸">
+        <div class="caption"><h2>高山草甸</h2><p>雪山脚下，一顶帐篷就是全世界</p></div>
+      </div>
+    </div>
+    <button class="arrow prev" title="上一张">‹</button>
+    <button class="arrow next" title="下一张">›</button>
+    <div class="dots clearfix"></div>
+  </section>
+
+  <!-- 网站特色：三栏浮动 -->
+  <section class="section">
+    <div class="container">
+      <div class="section-title"><h2>为什么选择野趣营地</h2><p>从选营地到装背包，一站式露营资讯</p></div>
+      <div class="features clearfix">
+        <div class="item card"><div class="icon">🏕</div><h3>精选营地</h3><p>实地探访全国热门营地，评分、设施、价格一目了然。</p></div>
+        <div class="item card"><div class="icon">🎒</div><h3>装备清单</h3><p>按必备/舒适/进阶分类，在线勾选，自动估算负重。</p></div>
+        <div class="item card"><div class="icon">🧭</div><h3>实用攻略</h3><p>选址、搭帐、营火、安全，新手也能轻松出发。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 全景图 + map 热点 -->
+  <section class="section" style="background:#fff">
+    <div class="container">
+      <div class="section-title"><h2>营地全景导览</h2><p>点击全景图中的帐篷、背包、路牌或营火，直达对应栏目</p></div>
+      <div class="panorama">
+        <img src="images/panorama.jpg" alt="露营全景图" usemap="#campMap" width="1200" height="500">
+        <map name="campMap" id="campMap">
+          <area shape="rect" coords="60,340,320,435" href="camps.html" alt="营地推荐" data-tip="🏕 帐篷区 → 营地推荐">
+          <area shape="rect" coords="465,345,600,465" href="gear.html" alt="装备挑选" data-tip="🎒 背包 → 装备挑选">
+          <area shape="poly" coords="800,320,900,320,920,345,900,370,836,370,836,460,824,460,824,370,800,370" href="guide.html" alt="露营攻略" data-tip="🧭 路牌 → 露营攻略">
+          <area shape="circle" coords="1060,430,62" href="signup.html" alt="报名同行" data-tip="🔥 营火 → 报名同行">
+        </map>
+        <div class="map-tip"></div>
+      </div>
+      <ul class="hot-legend">
+        <li><i></i>帐篷：营地推荐</li><li><i></i>背包：装备挑选</li>
+        <li><i></i>路牌：露营攻略</li><li><i></i>营火：报名同行</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 最新资讯：左右两栏浮动 -->
+  <section class="section">
+    <div class="container clearfix">
+      <div class="section-title"><h2>露营资讯</h2><p>最新营地动态与玩家分享</p></div>
+      <div class="news-main">
+        <div class="news-item card clearfix">
+          <img src="images/camp1.jpg" alt="湖畔营地">
+          <div class="info">
+            <h3><a href="camps.html">秋季湖畔营地开放预约，早鸟价 8 折</a></h3>
+            <p class="meta">营地动态 · 2026-10-20</p>
+            <p>秋高气爽正是露营好时节，溪月湖营地新增 20 个草地营位，支持在线预约。</p>
+          </div>
+        </div>
+        <div class="news-item card clearfix">
+          <img src="images/gear2.jpg" alt="睡袋">
+          <div class="info">
+            <h3><a href="gear.html">秋冬睡袋怎么选？看懂温标不踩坑</a></h3>
+            <p class="meta">装备评测 · 2026-10-16</p>
+            <p>舒适温标、极限温标有什么区别？羽绒和棉睡袋各自适合什么场景？</p>
+          </div>
+        </div>
+        <div class="news-item card clearfix">
+          <img src="images/camp2.jpg" alt="星空营地">
+          <div class="info">
+            <h3><a href="guide.html">新手第一次夜宿野外，这 7 件事一定要知道</a></h3>
+            <p class="meta">露营攻略 · 2026-10-08</p>
+            <p>从营地选址到夜间保暖，再到无痕露营，帮你把第一次露营变成美好回忆。</p>
+          </div>
+        </div>
+      </div>
+      <aside class="news-side">
+        <div class="side-box card weather">
+          <h3 style="text-align:left">本周露营指数</h3>
+          <p class="temp">18℃</p>
+          <p>晴转多云 · 微风 · 适宜露营</p>
+        </div>
+        <div class="side-box card">
+          <h3>热门营地排行</h3>
+          <ol class="rank">
+            <li><span>1</span><a href="camps.html">溪月湖营地</a></li>
+            <li><span>2</span><a href="camps.html">星空草原营地</a></li>
+            <li><span>3</span><a href="camps.html">松涛森林营地</a></li>
+            <li><span>4</span><a href="camps.html">雪山草甸营地</a></li>
+            <li><span>5</span><a href="camps.html">听海沙滩营地</a></li>
+          </ol>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+  <footer class="footer">
+    <div class="container clearfix">
+      <div class="col">
+        <h4>⛺ 野趣营地</h4>
+        <p>分享真实的露营体验，让每一次出发都更从容。</p>
+      </div>
+      <div class="col">
+        <h4>网站导航</h4>
+        <ul>
+          <li><a href="index.html">露营首页</a></li>
+          <li><a href="camps.html">营地推荐</a></li>
+          <li><a href="gear.html">装备挑选</a></li>
+          <li><a href="guide.html">露营攻略</a></li>
+        </ul>
+      </div>
+      <div class="col">
+        <h4>联系我们</h4>
+        <ul>
+          <li>邮箱：hello@yequ-camp.cn</li>
+          <li>电话：025-8888 6666</li>
+          <li>地址：江苏省南京市（虚拟）</li>
+        </ul>
+      </div>
+      <div class="col">
+        <h4>无痕露营倡议</h4>
+        <p>带走垃圾，留下脚印；尊重自然，守护山野。</p>
+        <p><a class="btn" href="signup.html">加入我们</a></p>
+      </div>
+      <p class="copy">© 2026 野趣营地 · 《网站原理与设计》课程大作业 · 图文素材均为原创示意</p>
+    </div>
+  </footer>
+  <button class="back-top" title="回到顶部">↑</button>
+  <script src="js/main.js"></script>
+</body>
+</html>

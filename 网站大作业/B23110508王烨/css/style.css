@@ -1,0 +1,274 @@
+/* ================================================
+   野趣营地 —— 户外露营资讯分享网站 公共样式表
+   ================================================ */
+
+/* ---------- 1. 基础重置与公共变量 ---------- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --green-dark: #2f5d50;
+  --green: #4a8c6f;
+  --green-light: #e8f3ec;
+  --orange: #f2994a;
+  --sand: #faf7f0;
+  --text: #333;
+  --muted: #777;
+  --radius: 10px;
+}
+html { scroll-behavior: smooth; }
+body {
+  font-family: "Microsoft YaHei", "PingFang SC", "WenQuanYi Zen Hei", sans-serif;
+  color: var(--text);
+  background: var(--sand);
+  line-height: 1.7;
+  padding-top: 64px;               /* 为固定导航栏留出空间 */
+}
+a { color: var(--green); text-decoration: none; }
+a:hover { color: var(--orange); }
+ul { list-style: none; }
+img { display: block; max-width: 100%; }
+.container { width: 1200px; max-width: 94%; margin: 0 auto; }
+.clearfix::after { content: ""; display: block; clear: both; }   /* 清除浮动 */
+
+/* ---------- 2. 顶部固定导航栏（position: fixed） ---------- */
+.header {
+  position: fixed; top: 0; left: 0; right: 0;
+  height: 64px; z-index: 1000;
+  background: rgba(47, 93, 80, .96);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, .15);
+}
+.header .logo {
+  float: left; line-height: 64px;
+  font-size: 24px; font-weight: bold; color: #fff; letter-spacing: 2px;
+}
+.header .logo span { color: var(--orange); }
+.nav { float: right; }
+.nav li { float: left; }
+.nav a {
+  display: block; padding: 0 22px; line-height: 64px;
+  color: #e6f0eb; font-size: 16px; position: relative;
+}
+.nav a::after {                    /* 导航下划线动画 */
+  content: ""; position: absolute; left: 50%; bottom: 14px;
+  width: 0; height: 3px; background: var(--orange);
+  transition: all .3s; transform: translateX(-50%);
+}
+.nav a:hover, .nav a.active { color: #fff; }
+.nav a:hover::after, .nav a.active::after { width: 60%; }
+.nav .btn-join a { background: var(--orange); color: #fff; border-radius: 20px; line-height: 36px; margin-top: 14px; margin-left: 10px; }
+.nav .btn-join a::after { display: none; }
+.menu-toggle { display: none; float: right; color: #fff; font-size: 26px; line-height: 64px; cursor: pointer; }
+
+/* ---------- 3. 面包屑 / 页面横幅 ---------- */
+.page-banner {
+  position: relative; height: 220px; overflow: hidden;
+  background-size: cover; background-position: center;
+}
+.page-banner::before { content: ""; position: absolute; inset: 0; background: rgba(0, 0, 0, .35); }
+.page-banner .text { position: absolute; left: 0; right: 0; top: 50%; transform: translateY(-50%); text-align: center; color: #fff; }
+.page-banner h1 { font-size: 38px; letter-spacing: 6px; }
+.breadcrumb { padding: 14px 0; font-size: 14px; color: var(--muted); }
+.breadcrumb a { margin-right: 4px; }
+
+/* ---------- 4. 首页：图片轮播 ---------- */
+.slider { position: relative; height: 420px; overflow: hidden; background: #000; }
+.slider .slides { width: 300%; height: 100%; transition: transform .8s ease; }
+.slider .slide { float: left; width: 33.3333%; height: 100%; position: relative; }
+.slider .slide img { width: 100%; height: 100%; object-fit: cover; }
+.slider .caption {
+  position: absolute; left: 8%; bottom: 70px; color: #fff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, .5);
+}
+.slider .caption h2 { font-size: 40px; letter-spacing: 4px; }
+.slider .caption p { font-size: 18px; }
+.slider .arrow {
+  position: absolute; top: 50%; margin-top: -24px; width: 48px; height: 48px;
+  border: none; border-radius: 50%; cursor: pointer;
+  background: rgba(255, 255, 255, .35); color: #fff; font-size: 24px;
+  transition: background .3s;
+}
+.slider .arrow:hover { background: rgba(255, 255, 255, .7); color: var(--green-dark); }
+.slider .prev { left: 20px; }
+.slider .next { right: 20px; }
+.slider .dots { position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%); }
+.slider .dots span {
+  float: left; width: 12px; height: 12px; margin: 0 6px; border-radius: 6px;
+  background: rgba(255, 255, 255, .5); cursor: pointer; transition: all .3s;
+}
+.slider .dots span.on { width: 32px; background: var(--orange); }
+
+/* ---------- 5. 公共区块 ---------- */
+.section { padding: 50px 0; }
+.section-title { text-align: center; margin-bottom: 34px; }
+.section-title h2 { font-size: 30px; color: var(--green-dark); letter-spacing: 3px; }
+.section-title p { color: var(--muted); }
+.section-title h2::after { content: ""; display: block; width: 60px; height: 3px; margin: 10px auto; background: var(--orange); }
+.card {
+  background: #fff; border-radius: var(--radius); overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, .06); transition: transform .3s, box-shadow .3s;
+}
+.card:hover { transform: translateY(-6px); box-shadow: 0 10px 24px rgba(0, 0, 0, .12); }
+.btn {
+  display: inline-block; padding: 8px 24px; border-radius: 22px; border: none; cursor: pointer;
+  background: var(--green); color: #fff; font-size: 15px; transition: background .3s;
+}
+.btn:hover { background: var(--orange); color: #fff; }
+.btn-outline { background: transparent; border: 1px solid var(--green); color: var(--green); }
+
+/* ---------- 6. 首页：特色（浮动三栏） ---------- */
+.features .item { float: left; width: 31.33%; margin-right: 3%; padding: 30px 26px; text-align: center; }
+.features .item:last-child { margin-right: 0; }
+.features .icon {
+  width: 70px; height: 70px; margin: 0 auto 14px; border-radius: 50%;
+  background: var(--green-light); color: var(--green); font-size: 32px; line-height: 70px;
+}
+.features h3 { color: var(--green-dark); margin-bottom: 8px; }
+
+/* ---------- 7. 首页：全景热点图 ---------- */
+.panorama { position: relative; }
+.panorama img { width: 100%; border-radius: var(--radius); }
+.map-tip {
+  position: absolute; display: none; padding: 4px 12px; border-radius: 6px;
+  background: rgba(0, 0, 0, .75); color: #fff; font-size: 14px; pointer-events: none; white-space: nowrap;
+}
+.hot-legend { margin-top: 14px; text-align: center; color: var(--muted); }
+.hot-legend li { display: inline-block; margin: 0 12px; }
+.hot-legend i { display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: var(--orange); margin-right: 6px; }
+
+/* ---------- 8. 首页：资讯两栏（左浮动 + 右浮动） ---------- */
+.news-main { float: left; width: 66%; }
+.news-side { float: right; width: 31%; }
+.news-item { margin-bottom: 20px; }
+.news-item img { float: left; width: 220px; height: 140px; object-fit: cover; }
+.news-item .info { margin-left: 240px; padding: 14px 18px 14px 0; }
+.news-item h3 { font-size: 18px; }
+.news-item .meta { font-size: 13px; color: var(--muted); }
+.side-box { padding: 22px; margin-bottom: 20px; }
+.side-box h3 { border-left: 4px solid var(--orange); padding-left: 10px; margin-bottom: 12px; color: var(--green-dark); }
+.rank li { padding: 8px 0; border-bottom: 1px dashed #e5e5e5; }
+.rank li span { display: inline-block; width: 22px; height: 22px; margin-right: 8px; border-radius: 4px; background: #ccc; color: #fff; text-align: center; line-height: 22px; font-size: 12px; }
+.rank li:nth-child(-n+3) span { background: var(--orange); }
+.weather { text-align: center; }
+.weather .temp { font-size: 42px; color: var(--orange); }
+
+/* ---------- 9. 营地推荐页 ---------- */
+.filter { text-align: center; margin-bottom: 26px; }
+.filter button { margin: 0 6px 8px; }
+.filter button.on { background: var(--orange); }
+.camp-list .camp { float: left; width: 31.33%; margin: 0 1% 30px; }   /* 左右等距，筛选后仍可整齐排列 */
+.camp .pic { position: relative; }
+.camp .pic img { height: 210px; width: 100%; object-fit: cover; }
+.camp .tag {
+  position: absolute; top: 12px; left: 12px; padding: 2px 10px; border-radius: 4px;
+  background: var(--orange); color: #fff; font-size: 13px;
+}
+.camp .score { position: absolute; right: 12px; bottom: 12px; color: #fff; font-weight: bold; text-shadow: 0 1px 4px #000; }
+.camp .body { padding: 16px 18px 20px; }
+.camp h3 { color: var(--green-dark); }
+.camp .addr { font-size: 13px; color: var(--muted); }
+.camp .price { color: var(--orange); font-size: 20px; font-weight: bold; }
+.camp.hide { display: none; }
+
+table.data { width: 100%; border-collapse: collapse; background: #fff; box-shadow: 0 4px 16px rgba(0, 0, 0, .05); }
+table.data caption { font-size: 18px; font-weight: bold; padding: 10px; color: var(--green-dark); }
+table.data th, table.data td { padding: 12px 10px; border: 1px solid #e6e6e6; text-align: center; }
+table.data th { background: var(--green); color: #fff; }
+table.data tbody tr:nth-child(even) { background: #f6faf7; }
+table.data tbody tr:hover { background: #fff3e6; }
+
+/* ---------- 10. 装备挑选页 ---------- */
+.gear-grid .g { float: left; width: 23.5%; margin-right: 2%; }
+.gear-grid .g:last-child { margin-right: 0; }
+.gear-grid .g img { height: 170px; width: 100%; object-fit: cover; }
+.gear-grid .g .body { padding: 14px 16px; }
+.gear-grid .g ul li { font-size: 14px; padding-left: 16px; position: relative; }
+.gear-grid .g ul li::before { content: ""; position: absolute; left: 0; top: 10px; width: 6px; height: 6px; border-radius: 50%; background: var(--green); }
+
+.checklist { float: left; width: 64%; padding: 24px 28px; }
+.checklist fieldset { border: 1px dashed #cfd8d3; border-radius: 8px; padding: 10px 18px 14px; margin-bottom: 16px; }
+.checklist legend { padding: 0 8px; font-weight: bold; color: var(--green-dark); }
+.checklist label { display: inline-block; width: 48%; padding: 4px 0; cursor: pointer; }
+.checklist label em { font-style: normal; color: var(--muted); font-size: 13px; }
+.summary { float: right; width: 33%; padding: 24px; position: sticky; top: 84px; }
+.summary .num { font-size: 36px; color: var(--orange); font-weight: bold; }
+.progress { height: 14px; border-radius: 7px; background: #eee; overflow: hidden; margin: 10px 0; }
+.progress div { height: 100%; width: 0; background: linear-gradient(90deg, var(--green), var(--orange)); transition: width .4s; }
+.summary .level { padding: 8px 12px; border-radius: 6px; background: var(--green-light); margin: 10px 0; }
+
+/* ---------- 11. 露营攻略页 ---------- */
+.toc { float: left; width: 23%; padding: 20px; position: sticky; top: 84px; }
+.toc li a { display: block; padding: 8px 10px; border-radius: 6px; color: var(--text); }
+.toc li a:hover, .toc li a.on { background: var(--green-light); color: var(--green); }
+.articles { float: right; width: 74%; }
+.article { padding: 28px 32px; margin-bottom: 24px; }
+.article h2 { color: var(--green-dark); margin-bottom: 10px; }
+.article h2 small { font-size: 14px; color: var(--muted); font-weight: normal; margin-left: 10px; }
+.article ol { padding-left: 22px; }
+.article ol li { margin: 6px 0; }
+.article .tip { margin-top: 14px; padding: 12px 16px; border-left: 4px solid var(--orange); background: #fff8f0; }
+.faq .q {
+  position: relative; padding: 14px 40px 14px 16px; margin-top: 10px;
+  background: var(--green-light); border-radius: 6px; cursor: pointer; font-weight: bold;
+}
+.faq .q::after { content: "+"; position: absolute; right: 16px; top: 10px; font-size: 22px; transition: transform .3s; }
+.faq .q.open::after { transform: rotate(45deg); }
+.faq .a { max-height: 0; overflow: hidden; padding: 0 16px; transition: max-height .4s ease, padding .4s; }
+.faq .a.open { max-height: 200px; padding: 12px 16px; }
+
+/* ---------- 12. 报名表单页 ---------- */
+.form-wrap { float: left; width: 64%; padding: 30px 36px; }
+.form-side { float: right; width: 33%; }
+.form-row { margin-bottom: 18px; }
+.form-row > label.t { display: block; margin-bottom: 6px; font-weight: bold; }
+label.t b { color: #e53935; }
+.form-row input[type=text], .form-row input[type=tel], .form-row input[type=email],
+.form-row input[type=date], .form-row input[type=number], .form-row select, .form-row textarea {
+  width: 100%; padding: 10px 12px; border: 1px solid #d5ddd8; border-radius: 6px;
+  font-size: 15px; font-family: inherit; outline: none; transition: border .3s, box-shadow .3s;
+}
+.form-row input:focus, .form-row select:focus, .form-row textarea:focus { border-color: var(--green); box-shadow: 0 0 0 3px rgba(74, 140, 111, .15); }
+.form-row .half { float: left; width: 48%; }
+.form-row .half + .half { float: right; }
+.form-row .opt { display: inline-block; margin-right: 18px; }
+.form-row .err { display: block; height: 18px; font-size: 13px; color: #e53935; }
+.invalid input, .invalid select { border-color: #e53935; }
+.count { float: right; font-size: 13px; color: var(--muted); }
+
+.mask { position: fixed; inset: 0; background: rgba(0, 0, 0, .5); z-index: 2000; display: none; }
+.modal {
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+  width: 420px; max-width: 90%; padding: 30px; border-radius: 12px; background: #fff; text-align: center;
+}
+.modal h3 { color: var(--green); font-size: 24px; margin-bottom: 10px; }
+.modal ul { text-align: left; margin: 14px 0; background: var(--green-light); padding: 12px 18px; border-radius: 8px; }
+
+/* ---------- 13. 页脚与回到顶部 ---------- */
+.footer { background: #23302b; color: #b9c5bf; padding: 40px 0 0; margin-top: 30px; }
+.footer .col { float: left; width: 25%; padding-right: 20px; }
+.footer h4 { color: #fff; margin-bottom: 10px; }
+.footer a { color: #b9c5bf; }
+.footer a:hover { color: var(--orange); }
+.footer .copy { clear: both; text-align: center; padding: 16px 0; margin-top: 26px; border-top: 1px solid #3a4842; font-size: 13px; }
+.back-top {
+  position: fixed; right: 30px; bottom: 40px; width: 46px; height: 46px; z-index: 999;
+  border-radius: 50%; border: none; background: var(--orange); color: #fff; font-size: 20px;
+  cursor: pointer; opacity: 0; visibility: hidden; transition: all .3s;
+}
+.back-top.show { opacity: 1; visibility: visible; }
+
+/* ---------- 14. 响应式适配（窄屏） ---------- */
+@media (max-width: 900px) {
+  .menu-toggle { display: block; }
+  .nav { display: none; position: absolute; top: 64px; left: 0; right: 0; background: var(--green-dark); }
+  .nav.open { display: block; }
+  .nav li { float: none; }
+  .nav .btn-join a { margin: 8px 22px; text-align: center; }
+  .features .item, .camp-list .camp, .gear-grid .g, .news-main, .news-side,
+  .checklist, .summary, .toc, .articles, .form-wrap, .form-side, .footer .col {
+    float: none; width: 100%; margin-right: 0; position: static;
+  }
+  .features .item, .gear-grid .g { margin-bottom: 20px; }
+  .slider { height: 260px; }
+  .slider .caption h2 { font-size: 26px; }
+  .news-item img { float: none; width: 100%; height: 180px; }
+  .news-item .info { margin-left: 0; padding: 14px 18px; }
+}
